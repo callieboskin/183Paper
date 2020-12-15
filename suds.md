@@ -57,9 +57,11 @@ At the end of the day, Long short term memory neural networks are classified as 
 
 ![Supervised Learning](./images/supervised.png "Supervised Learning Example")
 ###### This is an example of Supervised learning, where we tell the computer exactly what each thing is during the training phase. This is in contrast to the following picture, which is unsupervised.  
+<br />  
   
 ![Unsupervised Learning](./images/unsupervised.png "Unsupervised Learning Example")
 ###### This is Unsupervised learning where input is not labeled upon entry. Only after classification does a human need to come in and find out what each group represents.
+<br />
 
 **Deep learning** corresponds to having multiple layers in between the input and the output layers. This is a common tactic to allow for more computation that could find hidden patterns within the code. LSTM's are inherently 'deep', as they always include multiple different layers within the temporal dimensions. This essentially works by chaining several machine learning practices and algorithms together so they can operate off of each other and while one looks at raw data and simplifies, the other can draw meaningful conclusions from a more closed set of input. This allows for higher level abstraction and can be useful in particular situations where data is extremely complex or hidden
 
@@ -81,32 +83,34 @@ Before jumping in, we have to define some common terms that are used when talkin
 * Hyperbolic Tangent: Another mathematical function also shaped like an S curve, but bounded by y=[-1,1]
 
 ![Common Activation Functions](./images/CommonActivationFunctions_Cropped.jpg "Common Activation Functions")
-###### The sigmoid and tanh functions are used in the activation step during calculation to figure out which features are important
+###### The sigmoid and tanh functions are used in the activation step during calculation to figure out which features are important  
 
+<br />
 ### How do LSTMs work?
 
-Unlike standard RNNs that possess only one layer, LSTMs utilize multiple layers as a means to store long term dependencies. LSTMs feature what is called a cell state, or a collection of all information that has been stored throughout the chain. 
+Unlike standard RNNs that possess only one layer, LSTMs utilize multiple layers as a means to store long term dependencies. LSTMs feature what is called a cell state, or a collection of all information that has been stored throughout the chain.  
+<br />
 
 ### The Big Picture: 
 ![LSTM Big Pic](./images/LSTM.png "A typical LSTM computational cell")
 ###### This is the typical layout of a computational cell within the LSTM. We will look at each specific gate more in detail below.
 
-This cell state acts as a conveyor belt, traveling in a straight path across the different cells, both storing important information for later, forgetting no longer useful information, and assisting the cell with calculations by providing a filtered set of its memory to the main calculation path. How does the cell state update and how does the network know what pieces of information to keep? This is where the previously mentioned gates work their magic. 
-
+This cell state acts as a conveyor belt, traveling in a straight path across the different cells, both storing important information for later, forgetting no longer useful information, and assisting the cell with calculations by providing a filtered set of its memory to the main calculation path. How does the cell state update and how does the network know what pieces of information to keep? This is where the previously mentioned gates work their magic.  
+<br />
 
 ### The Forget Gate: 
 ![Forget Gate](./images/ForgetGate.png "A focused picture of the forget gate within LSTMs")
 ###### Forget gates are the method by which LSTMs remove irrelevant information from their calculations.
 
-The first gate is called the “forget gate”. This gate will look through both the previous cell’s output (O_t-1) and the next input (I_t) and assign the information within the cell state values to determine which of the specific pieces of information will remain and which ones the state can “forget”. This gate is a sigmoid layer so it will output a value between 0 and 1 for the combined (O_t-1, I_t). If the information is assigned a 0, then the state will get rid of it and if the information is assigned a 1 then the information will stay. The forget gate output is multiplied by the cell state to remove all information with an assigned value of 0, or the information that the state no longer needs.
-
+The first gate is called the “forget gate”. This gate will look through both the previous cell’s output (O_t-1) and the next input (I_t) and assign the information within the cell state values to determine which of the specific pieces of information will remain and which ones the state can “forget”. This gate is a sigmoid layer so it will output a value between 0 and 1 for the combined (O_t-1, I_t). If the information is assigned a 0, then the state will get rid of it and if the information is assigned a 1 then the information will stay. The forget gate output is multiplied by the cell state to remove all information with an assigned value of 0, or the information that the state no longer needs.  
+<br />
 
 ### The Input Gate
 ![Input Gate](./images/InputGate.png "A focused picture of the input gate")
 ###### Input gates are where cell states get new information based on previous and new input.
 
-The next gate is the “Input gate”, where the cell state will get new information based off of the previous output and new input. First, (O_t-1, I_t) is sent through a sigmoid input layer to obtain output with 0s and 1s. At the same time, another copy of (O<sub>t-1</sub>,I<sub>t</sub>) (O_t-1, I_t) is passed through a tanh layer, which will create a vector of possible new information to add onto the cell state where the different nodes on the vector have values anywhere between -1 and 1. These two outputs are multiplied to filter out information in the vector that the input gate didn’t want and then added onto the cell state. While the cell state will be used in the next step, all of the information in the cell state after the input gate gets passed onto the next cell in the chain.
-
+The next gate is the “Input gate”, where the cell state will get new information based off of the previous output and new input. First, (O_t-1, I_t) is sent through a sigmoid input layer to obtain output with 0s and 1s. At the same time, another copy of (O<sub>t-1</sub>,I<sub>t</sub>) (O_t-1, I_t) is passed through a tanh layer, which will create a vector of possible new information to add onto the cell state where the different nodes on the vector have values anywhere between -1 and 1. These two outputs are multiplied to filter out information in the vector that the input gate didn’t want and then added onto the cell state. While the cell state will be used in the next step, all of the information in the cell state after the input gate gets passed onto the next cell in the chain.  
+<br />
 
 ### The Output Gate
 ![Output Gate](./images/OutputGate.png "A focused picture of the output gate")
@@ -144,14 +148,14 @@ Take a look at the following chart as a helpful guide to start your journey on t
 
 Now that we have an enhanced understanding of LSTM Networks, let’s take a look at both how they can be used right now and how they may be utilized in the future.
 
-### Sequence Alignment: 
-[Link to Sequence Alignment Paper](https://ieeexplore.ieee.org/abstract/document/8754024) 
-
+### [Sequence Alignment](https://ieeexplore.ieee.org/abstract/document/8754024): 
 Due to their ability to hold onto information over many iterations of inputs and calculations, LSTMs have the framework to calculate ideal alignment between sequences. By storing the reference sequence in the cell state and adding on potential alignment vectors each time step, a query sequence input can be analyzed across the entire reference sequence to look for the alignment with the highest score.
 
 LSTM-Alignment has many potential improvements over currently available alignment, multiple sequence alignment, and long alignment softwares. LSTMs can handle much longer sequences due to the cell state, and may even be more accurate with proper algorithm training. 
 
-### Sequence Prediction: 
+[Link to Sequence Alignment Paper](https://ieeexplore.ieee.org/abstract/document/8754024) 
+
+### [Sequence Prediction](https://towardsdatascience.com/lstm-to-detect-neanderthal-dna-843df7e85743): 
 
 Another example of LSTMs being able to identify long-range correlation between genomic sequences can be seen with identifying neanderthal introgression levels in modern human genes. To do this, the trained LSTM model has the ability to compare k-mers from modern human genes with neanderthal DNA to determine if the gene has ancestry within the neanderthal reference.
 
