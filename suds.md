@@ -55,12 +55,11 @@ At the end of the day, Long short term memory neural networks are classified as 
 
 **Supervised** simply means that in the training phase, we are feeding the neural network with data that has already been labeled with the correct answer. This allows for the neural network to correct itself and reconfigure its calculation nodes and memory gates in a way that is most optimized for the task it is trained for. To give an example, if we feed the neural network a bunch of text, letter after letter, it might be able to guess what the next letter is and then use the correct answer (the label) to judge whether it was right or wrong. If it is wrong, it will change its computational methods to be better next time, and if it is right, it will reinforce what it already has. This is opposed to unsupervised learning, where input just comes in without any labelling, allowing the neural net to discover for itself what the patterns are.
 
-![Supervised Learning](./images/supervised.png "Supervised Learning Example") 
-###### This is an example of Supervised learning, where we tell the computer exactly what each thing is during the training phase. This is in contrast to the following picture, which is unsupervised.
-
-
+![Supervised Learning](./images/supervised.png "Supervised Learning Example")
+###### This is an example of Supervised learning, where we tell the computer exactly what each thing is during the training phase. This is in contrast to the following picture, which is unsupervised.  
+  
 ![Unsupervised Learning](./images/unsupervised.png "Unsupervised Learning Example")
-###### This is Unsupervised learning where input is not labeled upon entry, only after classification does a human need to come in and find out what each group represents.
+###### This is Unsupervised learning where input is not labeled upon entry. Only after classification does a human need to come in and find out what each group represents.
 
 **Deep learning** corresponds to having multiple layers in between the input and the output layers. This is a common tactic to allow for more computation that could find hidden patterns within the code. LSTM's are inherently 'deep', as they always include multiple different layers within the temporal dimensions. This essentially works by chaining several machine learning practices and algorithms together so they can operate off of each other and while one looks at raw data and simplifies, the other can draw meaningful conclusions from a more closed set of input. This allows for higher level abstraction and can be useful in particular situations where data is extremely complex or hidden
 
@@ -77,9 +76,9 @@ Before jumping in, we have to define some common terms that are used when talkin
 
 * Gate: A regulator of information. LSTMs possess 3 gates that all carry out similar functions at different steps in a LSTM; Forget, Input, Output.
 
-* Sigmoid Function: A mathematical function shaped like an S curve bounded by [0,1]
+* Sigmoid Function: A mathematical function shaped like an S curve bounded by y=[0,1]
 
-* Hyperbolic Tangent: Another mathematical function also shaped like an S curve, but bounded by [-1,1]
+* Hyperbolic Tangent: Another mathematical function also shaped like an S curve, but bounded by y=[-1,1]
 
 ![Common Activation Functions](./images/CommonActivationFunctions_Cropped.jpg "Common Activation Functions")
 ###### The sigmoid and tanh functions are used in the activation step during calculation to figure out which features are important
@@ -88,22 +87,30 @@ Before jumping in, we have to define some common terms that are used when talkin
 
 Unlike standard RNNs that possess only one layer, LSTMs utilize multiple layers as a means to store long term dependencies. LSTMs feature what is called a cell state, or a collection of all information that has been stored throughout the chain. 
 
-LSTM: 
-[add lstm.png]
+### The Big Picture: 
+![LSTM Big Pic](./images/LSTM.png "A typical LSTM computational cell")
+###### This is the typical layout of a computational cell within the LSTM. We will look at each specific gate more in detail below.
 
 This cell state acts as a conveyor belt, traveling in a straight path across the different cells, both storing important information for later, forgetting no longer useful information, and assisting the cell with calculations by providing a filtered set of its memory to the main calculation path. How does the cell state update and how does the network know what pieces of information to keep? This is where the previously mentioned gates work their magic. 
 
 
-Forget Gate: 
-[forget gate]
+### The Forget Gate: 
+![Forget Gate](./images/ForgetGate.png "A focused picture of the forget gate within LSTMs")
+###### Forget gates are the method by which LSTMs remove irrelevant information from their calculations.
 
-The first gate is called the “forget gate”. This gate will look through both the previous cell’s output (Ot-1) and the next input (It) and assign the information within the cell state values to determine which of the specific pieces of information will remain and which ones the state can “forget”. This gate is a sigmoid layer so it will output a value between 0 and 1 for the combined (Ot-1, It). If the information is assigned a 0, then the state will get rid of it and if the information is assigned a 1 then the information will stay. The forget gate output is multiplied by the cell state to remove all information with an assigned value of 0, or the information that the state no longer needs..
+The first gate is called the “forget gate”. This gate will look through both the previous cell’s output (Ot-1) and the next input (It) and assign the information within the cell state values to determine which of the specific pieces of information will remain and which ones the state can “forget”. This gate is a sigmoid layer so it will output a value between 0 and 1 for the combined (Ot-1, It). If the information is assigned a 0, then the state will get rid of it and if the information is assigned a 1 then the information will stay. The forget gate output is multiplied by the cell state to remove all information with an assigned value of 0, or the information that the state no longer needs.
 
-[input gate]
+
+### The Input Gate
+![Input Gate](./images/InputGate.png "A focused picture of the input gate")
+###### Input gates are where cell states get new information based on previous and new input.
 
 The next gate is the “Input gate”, where the cell state will get new information based off of the previous output and new input. First, (Ot-1, It) is sent through a sigmoid input layer to obtain output with 0s and 1s. At the same time, another copy of (Ot-1, It) is passed through a tanh layer, which will create a vector of possible new information to add onto the cell state where the different nodes on the vector have values anywhere between -1 and 1. These two outputs are multiplied to filter out information in the vector that the input gate didn’t want and then added onto the cell state. While the cell state will be used in the next step, all of the information in the cell state after the input gate gets passed onto the next cell in the chain.
 
-[output gate]
+
+### The Output Gate
+![Output Gate](./images/OutputGate.png "A focused picture of the output gate")
+###### Output gates are where the information from the previous two gates combine to produce an output.
 
 The final gate is the output gate. While the prior two were manipulating the cell state, this gate uses the information from the cell state along with the previous cell output combined with the new input. First the sigmoid layer determines what information from (Ot-1, It) will be used in the new output, and this output of 0s and 1s is multiplied by a tanh layer of the cell state itself. This creates the final output for the individual cell, that will get passed onto the next one in the chain along with the cell state.
 
@@ -117,7 +124,7 @@ The final gate is the output gate. While the prior two were manipulating the cel
 
 ## Section 3.5  Compare and Contrast
 
-### What is difference between LSTM's and other RNN's?
+### What is the difference between LSTM's and other RNN's?
 type something here
 
 ### Comparison Chart
