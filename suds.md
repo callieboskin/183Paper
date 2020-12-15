@@ -126,7 +126,7 @@ LSTMs can be used to generate predictions in text. Below is a simple LSTM using 
 
 You can find the links to the data and the tutoral here:
 * [Dr. Seuss Poem Data](https://www.oatridge.co.uk/poems/d/dr-seuss-cat-in-the-hat.php)
-* [Tutorial form Harsh Bansal](https://bansalh944.medium.com/text-generation-using-lstm-b6ced8629b03)
+* [Tutorial from Harsh Bansal](https://bansalh944.medium.com/text-generation-using-lstm-b6ced8629b03)
 
 The first step is to import the necessary packages. Here is the list:
 ```
