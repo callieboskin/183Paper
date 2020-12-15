@@ -1,5 +1,6 @@
 # Chapter 3: Long Short Term Memory
-<!--- A deep dive into something most people will not even remember long or short term besides for the exam... --!>
+<!--- A deep dive into something most people will not even remember long or short term besides for the exam... 
+-->
 ____
 
 ## Section 3.1: What are Recurrent Neural Networks?
