@@ -271,15 +271,11 @@ Due to their ability to hold onto information over many iterations of inputs and
 
 LSTM-Alignment has many potential improvements over currently available alignment, multiple sequence alignment, and long alignment softwares. LSTMs can handle much longer sequences due to the cell state, and may even be more accurate with proper algorithm training. 
 
-[Link to Sequence Alignment Paper](https://ieeexplore.ieee.org/abstract/document/8754024) 
-
 ### [Sequence Prediction](https://towardsdatascience.com/lstm-to-detect-neanderthal-dna-843df7e85743): 
 
 Another example of LSTMs being able to identify long-range correlation between genomic sequences can be seen with identifying neanderthal introgression levels in modern human genes. To do this, the trained LSTM model has the ability to compare k-mers from modern human genes with neanderthal DNA to determine if the gene has ancestry within the neanderthal reference.
 
 For a more detailed look on this process and a better understanding of the conclusions from the experiment, here is a link to the article. 
-
-[Link to Sequence Prediction Article](https://towardsdatascience.com/lstm-to-detect-neanderthal-dna-843df7e85743)
 
 ### Future Directions:
 
