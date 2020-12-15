@@ -60,4 +60,21 @@ X = X/float(vocab_len)
 y = np_utils.to_categorical(y)
 ```
 
+Create a 3-layer LSTM, the first two with 256 units of memory and will store sequences of input data, and the last with 128 units of memory, and will generate a prediction for the next character in the sequence. 
+
+```
+model = Sequential()
+model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
+model.add(Dropout(0.2))
+model.add(LSTM(256, return_sequences=True))
+model.add(Dropout(0.2))
+model.add(LSTM(128))
+model.add(Dropout(0.2))
+model.add(Dense(y.shape[1], activation='softmax'))
+```
+
+Compile the model using an optimizer ([a link[https://towardsdatascience.com/adam-latest-trends-in-deep-learning-optimization-6be9a291375c#:~:text=Adam%20%5B1%5D%20is%20an%20adaptive,for%20training%20deep%20neural%20networks.&text=The%20algorithms%20leverages%20the,learning%20rates%20for%20each%20parameter.] Adam was used). 
+```
+model.compile(loss='categorical_crossentropy', optimizer='adam')
+```
 The genome is the "text of life", and LSTMs lanauge modeling processing can be easily translated from words to the genome. Next we're going to talk about some examples of how LSTMs can be applied to genomic data. 
