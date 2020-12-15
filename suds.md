@@ -266,16 +266,20 @@ Take a look at the following chart as a helpful guide to start your journey on t
 
 Now that we have an enhanced understanding of LSTM Networks, let’s take a look at both how they can be used right now and how they may be utilized in the future.
 
-### [Sequence Alignment](https://ieeexplore.ieee.org/abstract/document/8754024): 
+### Sequence Alignment:
+
+![Reference Paper Here](https://ieeexplore.ieee.org/abstract/document/8754024)
+
 Due to their ability to hold onto information over many iterations of inputs and calculations, LSTMs have the framework to calculate ideal alignment between sequences. By storing the reference sequence in the cell state and adding on potential alignment vectors each time step, a query sequence input can be analyzed across the entire reference sequence to look for the alignment with the highest score.
 
 LSTM-Alignment has many potential improvements over currently available alignment, multiple sequence alignment, and long alignment softwares. LSTMs can handle much longer sequences due to the cell state, and may even be more accurate with proper algorithm training. 
 
-### [Sequence Prediction](https://towardsdatascience.com/lstm-to-detect-neanderthal-dna-843df7e85743): 
+### Sequence Prediction: 
+
+![Reference Paper Here](https://towardsdatascience.com/lstm-to-detect-neanderthal-dna-843df7e85743)
 
 Another example of LSTMs being able to identify long-range correlation between genomic sequences can be seen with identifying neanderthal introgression levels in modern human genes. To do this, the trained LSTM model has the ability to compare k-mers from modern human genes with neanderthal DNA to determine if the gene has ancestry within the neanderthal reference.
 
 ### Future Directions:
 
-We are just beginning to unlock the powers that LSTMs have, and in the future they may be one of the most important components of genomic research. They could be used eventually to predict RNA and protein interactions ….
-
+We are just beginning to unlock the powers that LSTMs have, and in the future they may be one of the most important components of genomic research. Bioinformatics is at the cusp of the distinct fields of computer science, biology, natural language processing, and data science. Crossing multidisciplinary boundaries can lead to new and profound discoveries. We are excited to see what you all have to come up with in the near future!
