@@ -268,17 +268,17 @@ Now that we have an enhanced understanding of LSTM Networks, let’s take a look
 
 ### Sequence Alignment:
 
-![Reference Paper Here](https://ieeexplore.ieee.org/abstract/document/8754024)
-
 Due to their ability to hold onto information over many iterations of inputs and calculations, LSTMs have the framework to calculate ideal alignment between sequences. By storing the reference sequence in the cell state and adding on potential alignment vectors each time step, a query sequence input can be analyzed across the entire reference sequence to look for the alignment with the highest score.
 
 LSTM-Alignment has many potential improvements over currently available alignment, multiple sequence alignment, and long alignment softwares. LSTMs can handle much longer sequences due to the cell state, and may even be more accurate with proper algorithm training. 
 
+[Read the scientific paper here!](https://ieeexplore.ieee.org/abstract/document/8754024)
+
 ### Sequence Prediction: 
 
-![Reference Paper Here](https://towardsdatascience.com/lstm-to-detect-neanderthal-dna-843df7e85743)
-
 Another example of LSTMs being able to identify long-range correlation between genomic sequences can be seen with identifying neanderthal introgression levels in modern human genes. To do this, the trained LSTM model has the ability to compare k-mers from modern human genes with neanderthal DNA to determine if the gene has ancestry within the neanderthal reference.
+
+[Read the article here!](https://towardsdatascience.com/lstm-to-detect-neanderthal-dna-843df7e85743)
 
 ### Future Directions:
 
