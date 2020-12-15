@@ -1,11 +1,11 @@
 # Chapter 3: Long Short Term Memory
-#### A deep dive into something most people will not even remember long or short term besides for the exam...
+<!--- A deep dive into something most people will not even remember long or short term besides for the exam... ---!>
 ____
 
 ## Section 3.1: What are Recurrent Neural Networks?
 
 ### Introduction
-Now that we have covered some of the basic machine learning algorithms, lets dive into one of the more complex and widely used
+Now that we have covered some of the basic machine learning algorithms, let us dive into one of the more complex and widely used
 tools - a Long Short Term Memory Neural Network (LSTM). In this chapter, we will cover the following materials:
 1) A brief overview of Recurrent Neural Networks (RNN)
 2) What is a Long Short Term Memory Neural Network?
@@ -15,7 +15,7 @@ tools - a Long Short Term Memory Neural Network (LSTM). In this chapter, we will
 6) Genomic Applications of LSTMs
 
 ### What are Recurrent Neural Networks?
-To start with, what is a Recurrent Neural Network? First, let's define a neural network. This is a set of algorithms that function in a way that mimics a collection of neurons inside a human brain. There is an input, some calculations in the middle, and some output. The number of inputs, outputs and type of input/output (whether it is an image or music or text) varies per network, and your specific neural network can be customized to analyze whatever you want it to. The difference between a typical neural network and a *recurrent* neural network is that this structure also contains a way to persist some of the outputs from previous iterations into the input of the next iteration. This allows the neural network to essentially "remember" the past and form conclusions about what is to come based on what it has already seen.
+To start with, what is a Recurrent Neural Network? A neural network set of algorithms that function in a way that mimics a collection of neurons inside a human brain. There is an input, some calculations in the middle, and some output. The number of inputs, outputs and type of input/output (whether it is an image or music or text) varies per network, and your specific neural network can be customized to analyze whatever you want it to. The difference between a typical neural network and a *recurrent* neural network is that this structure also contains a way to persist some of the outputs from previous iterations into the input of the next iteration. This allows the neural network to essentially "remember" the past and form conclusions about what is to come based on what it has already seen.
 
 Don't worry if this was all very confusing. The next few diagrams should lay it out step by step for you, and even if you do not fully or completely understand how the inner mechanics work, you should still be able to use the tool to create some very interesting results!
 
