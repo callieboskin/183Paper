@@ -22,7 +22,9 @@ Don't worry if this was all very confusing. The next few diagrams should lay it 
 ### History and Prior Applications of RNN's
 Recurrent Neural Networks were developed in 1986 by David Rumelhart, a mathematical psychologist from Stanford University. You can read more about him here [Link to Personal Page](https://en.wikipedia.org/wiki/David_Rumelhart) and even read the original paper where this application is discussed in great detail here: [Link to paper](https://www.nature.com/articles/323533a0). This novel innnovation sparked a great deal of interest in applying this knowledge to many different fields. Within the turn of the century, scientists were starting to apply this to music composition, handwriting recognition, and even protein homology detection. It wasn't until 1997 that two European scientists created the LSTM as an improved and specialized version of the current RNN's. 
 
-If you are interested in reading more, [here](https://ai.googleblog.com/2019/03/rnn-based-handwriting-recognition-in.html) is an article about how Google is using RNN's to develop handwriting recognition software. [Here](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1174/reports/2762076.pdf) is another interesting article detailing how RNN-assisted computer generated music fooled over 70% of human listeners.
+If you are interested in reading more, check out these two articles:
+* [Article Here: ](https://ai.googleblog.com/2019/03/rnn-based-handwriting-recognition-in.html) This is an article about how Google is using RNN's to develop handwriting recognition software.
+* [Scientific Paper Here: ](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1174/reports/2762076.pdf) This is another interesting research paper detailing how RNN-assisted computer generated music fooled over 70% of human listeners.
 
 ### What is the structure of a Recurrent Neural Network?
 This might seem scary at first, but do not feel intimidated by the complex math or the weird structures you might see. They are all simply a collection of inputs, outputs, and arrows that indicate the direction that information is flowing. With that in mind, let us look at a simple RNN set-up.
@@ -31,7 +33,7 @@ This might seem scary at first, but do not feel intimidated by the complex math 
 
 From the picture above, you can see that there is a basic input, an output, and some calculations that happen in between. 
 
-The calculations are what makes this algorithm ultimately work, and we will be going into detail about what exactly those are later. The algorithm is simulated via nodes which contain the input (in green) <span style="color:blue">some *blue* text</span>, output (in red), and calculation (in blue) steps inside. As seen in the picture above, the arrow that leads from one computational node into the next computational node is what allows this recurrent neural network to have persistent memory and maintain information about past events. 
+The calculations are what makes this algorithm ultimately work, and we will be going into detail about what exactly those are later. The algorithm is simulated via nodes which contain the input (in green), output (in red), and calculation (in blue) steps inside. As seen in the picture above, the arrow that leads from one computational node into the next computational node is what allows this recurrent neural network to have persistent memory and maintain information about past events. 
 
 ---
 
