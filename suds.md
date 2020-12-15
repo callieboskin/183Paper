@@ -18,8 +18,6 @@ tools - a Long Short Term Memory Neural Network (LSTM). In this chapter, we will
 ### What are Recurrent Neural Networks?
 To start with, what is a Recurrent Neural Network? A neural network set of algorithms that function in a way that mimics a collection of neurons inside a human brain. There is an input, some calculations in the middle, and some output. The number of inputs, outputs and type of input/output (whether it is an image or music or text) varies per network, and your specific neural network can be customized to analyze whatever you want it to. The difference between a typical neural network and a *recurrent* neural network is that this structure also contains a way to persist some of the outputs from previous iterations into the input of the next iteration. This allows the neural network to essentially "remember" the past and form conclusions about what is to come based on what it has already seen.
 
-Don't worry if this was all very confusing. The next few diagrams should lay it out step by step for you, and even if you do not fully or completely understand how the inner mechanics work, you should still be able to use the tool to create some very interesting results!
-
 ### History and Prior Applications of RNNs
 Recurrent Neural Networks were developed in 1986 by David Rumelhart, a mathematical psychologist from Stanford University. You can read more about him here [Link to Personal Page](https://en.wikipedia.org/wiki/David_Rumelhart) and even read the original paper where this application is discussed in great detail here: [Link to paper](https://www.nature.com/articles/323533a0). This novel innnovation sparked a great deal of interest in applying this knowledge to many different fields. Within the turn of the century, scientists were starting to apply this to music composition, handwriting recognition, and even protein homology detection. It wasn't until 1997 that two European scientists created the LSTM as an improved and specialized version of the current RNNs. 
 
@@ -28,12 +26,12 @@ If you are interested in reading more, check out these two articles:
 * [Scientific Paper Here: ](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1174/reports/2762076.pdf) This is another interesting research paper detailing how RNN-assisted computer generated music fooled over 70% of human listeners.
 
 ### What is the structure of a Recurrent Neural Network?
-This might seem scary at first, but do not feel intimidated by the complex math or the weird structures you might see. They are all simply a collection of inputs, outputs, and arrows that indicate the direction that information is flowing. With that in mind, let us look at a simple RNN set-up.
+Do not feel intimidated by the complex math or the weird structures you might see. They are all simply a collection of inputs, outputs, and arrows that indicate the direction that information is flowing. With that in mind, let us look at a simple RNN set-up.
 
 ![A traditional RNN Architecture](./images/TraditionalRNNArchitecture.jpg "This is a traditional RNN Architecture")
 ###### This is a traditional set up, where at each time step, there is exactly one input and one output. 
 
-There are other neural networks where there is only one input at all and the output of that step feeds into the input of the next step and yet others where there are many inputs and only one output at the last step. The structure and setup you choose will depend on what type of problem you are trying to solve. From the picture above, you can see that there is a basic input, an output, and some calculations that happen in between. 
+There are other forms of neural networks where there are different layouts, from one input-> one output to many inputs -> many outputs and everything in between. The structure and setup you choose will depend on what type of problem you are trying to solve. From the picture above, you can see that there is a basic input, an output, and some calculations that happen in between. 
 
 The calculations are what makes this algorithm ultimately work, and we will be going into detail about what exactly those are later. The algorithm is simulated via nodes which contain the input (in green), output (in red), and calculation (in blue) steps inside. As seen in the picture above, the arrow that leads from one computational node into the next computational node is what allows this recurrent neural network to have persistent memory and maintain information about past events. 
 
