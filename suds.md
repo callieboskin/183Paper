@@ -277,7 +277,9 @@ LSTM-Alignment has many potential improvements over currently available alignmen
 
 Another example of LSTMs being able to identify long-range correlation between genomic sequences can be seen with identifying neanderthal introgression levels in modern human genes. To do this, the trained LSTM model has the ability to compare k-mers from modern human genes with neanderthal DNA to determine if the gene has ancestry within the neanderthal reference.
 
-For a more detailed look on this process and a better understanding of the conclusions from the experiment, here is a link to the article. [Link to Sequence Prediction Article](https://towardsdatascience.com/lstm-to-detect-neanderthal-dna-843df7e85743)
+For a more detailed look on this process and a better understanding of the conclusions from the experiment, here is a link to the article. 
+
+[Link to Sequence Prediction Article](https://towardsdatascience.com/lstm-to-detect-neanderthal-dna-843df7e85743)
 
 ### Future Directions:
 
