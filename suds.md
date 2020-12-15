@@ -4,7 +4,7 @@ ____
 
 ## Section 3.1: What are Recurrent Neural Networks?
 
-#### Introduction
+#### Introductionhttps://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks 
 Now that we have covered some of the basic machine learning algorithms, lets dive into one of the more complex and widely used
 tools - a Long Short Term Memory Neural Network (LSTM). We will start with a brief overview of the super-category of Recurrent Neural
 Networks (RNN), then take a closer look at what makes a Long Short Term memory different from a typical RNN. Following that, you
@@ -15,11 +15,13 @@ as some potential applications of LSTM's in the real world.
 ### What are Recurrent Neural Networks?
 say a lil something here
 
+
 ### History and Prior Applications
 random history and what it was used for
 
 ### What is the structure of a Recurrent Neural Network
 this is where a picture or table might be handy.
+![A traditional RNN Architecture](/images/TraditionalRNNArchitecture.jpg "This is a traditional RNN Architecture"
 
 ---
 
