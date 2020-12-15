@@ -4,7 +4,7 @@ ____
 
 ## Section 3.1: What are Recurrent Neural Networks?
 
-#### Introductionhttps://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks 
+#### Introduction
 Now that we have covered some of the basic machine learning algorithms, lets dive into one of the more complex and widely used
 tools - a Long Short Term Memory Neural Network (LSTM). We will start with a brief overview of the super-category of Recurrent Neural
 Networks (RNN), then take a closer look at what makes a Long Short Term memory different from a typical RNN. Following that, you
