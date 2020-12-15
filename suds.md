@@ -20,8 +20,13 @@ say a lil something here
 random history and what it was used for
 
 ### What is the structure of a Recurrent Neural Network
-this is where a picture or table might be handy.
-![A traditional RNN Architecture](/images/TraditionalRNNArchitecture.jpg "This is a traditional RNN Architecture"
+This might seem scary at first, but do not feel intimidated by the complex math or the weird structures you might see. They are all simply a 
+collection of inputs, outputs, and arrows that indicate the direction that information is flowing. With that in mind, let us look at a 
+simple RNN set-up.
+
+![A traditional RNN Architecture](./images/TraditionalRNNArchitecture.jpg "This is a traditional RNN Architecture")
+
+From the picture above, you can see that there is 
 
 ---
 
