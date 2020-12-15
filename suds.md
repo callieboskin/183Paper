@@ -51,35 +51,40 @@ All RNNs have feedback loops where some information about the past inputs is ret
 LSTM Networks are a special type of RNNs. They have a very similar layout, except LSTM computational units contain an additional cell called a "memory cell" that can maintain information over long periods of time. This memory cell includes additional gates which control when information enters its memory, when it should be forgotten, and how it should contribute to determining the output. These gates solve the problem of losing information over time, as it controls exactly what is important and what is not important by figuring this out during the training phase.
 
 ### A Supervised Deep Learning Algorithm
-At the end of the day, Long short term memory neural networks are classified as a Supervised Deep Learning algorithm that can be used for classification or Regression. I know that was a lot of big words, but let's break it down.
+At the end of the day, Long short term memory neural networks are classified as a **Supervised Deep Learning** algorithm that can be used for classification or Regression. I know that was a lot of big words, but let's break it down.
 
-Supervised simply means that in the training phase, we are feeding the neural network with data that has already been labeled with the correct answer. This allows for the neural network to correct itself and reconfigure its calculation nodes and memory gates in a way that is most optimized for the task it is trained for. To give an example, if we feed the neural network a bunch of text, letter after letter, it might be able to guess what the next letter is and then use the correct answer (the label) to judge whether it was right or wrong. If it is wrong, it will change its computational methods to be better next time, and if it is right, it will reinforce what it already has. This is opposed to unsupervised learning, where input just comes in without any labelling, allowing the neural net to discover for itself what the patterns are.
+**Supervised** simply means that in the training phase, we are feeding the neural network with data that has already been labeled with the correct answer. This allows for the neural network to correct itself and reconfigure its calculation nodes and memory gates in a way that is most optimized for the task it is trained for. To give an example, if we feed the neural network a bunch of text, letter after letter, it might be able to guess what the next letter is and then use the correct answer (the label) to judge whether it was right or wrong. If it is wrong, it will change its computational methods to be better next time, and if it is right, it will reinforce what it already has. This is opposed to unsupervised learning, where input just comes in without any labelling, allowing the neural net to discover for itself what the patterns are.
 
 ![Supervised Learning](./images/supervised.png "Supervised Learning Example") 
 ###### This is an example of Supervised learning, where we tell the computer exactly what each thing is during the training phase. This is in contrast to the following picture, which is unsupervised.
 
+
 ![Unsupervised Learning](./images/unsupervised.png "Unsupervised Learning Example")
 ###### This is Unsupervised learning where input is not labeled upon entry, only after classification does a human need to come in and find out what each group represents.
 
-Deep learning corresponds to having multiple layers in between the input and the output layers. This is a common tactic to allow for more computation that could find hidden patterns within the code. LSTM's are inherently 'deep', as they always include multiple different layers within the temporal dimensions. This essentially works by chaining several machine learning practices and algorithms together so they can operate off of each other and while one looks at raw data and simplifies, the other can draw meaningful conclusions from a more closed set of input. This allows for higher level abstraction and can be useful in particular situations where data is extremely complex or hidden
+**Deep learning** corresponds to having multiple layers in between the input and the output layers. This is a common tactic to allow for more computation that could find hidden patterns within the code. LSTM's are inherently 'deep', as they always include multiple different layers within the temporal dimensions. This essentially works by chaining several machine learning practices and algorithms together so they can operate off of each other and while one looks at raw data and simplifies, the other can draw meaningful conclusions from a more closed set of input. This allows for higher level abstraction and can be useful in particular situations where data is extremely complex or hidden
 
 ---
+
 ## Section 3.3 How do Long Short Term Memory Neural Networks actually work?
 
-LSTM Terms
+### Common LSTM Terms
+Before jumping in, we have to define some common terms that are used when talking about LSTMs.
 
-[Add math picture here, cut out RELU]
-Sigmoid function: Mathematical function that shaped like s curve bounded by [0,1]
-Other thing: {tanh}
+* Cell: A term used to describe the current group of calculations taking place.
 
+* Cell State: A collection of all information that has been stored throughout the chain of calculations.
 
-Cell: A term used to describe the current group of calculations taking place.
+* Gate: A regulator of information. LSTMs possess 3 gates that all carry out similar functions at different steps in a LSTM; Forget, Input, Output.
 
-Cell State: A collection of all information that has been stored throughout the chain of calculations.
+* Sigmoid Function: A mathematical function shaped like an S curve bounded by [0,1]
 
-Gate: A regulator of information. LSTMs possess 3 gates that all carry out similar functions at different steps in a LSTM; Forget, Input, Output.
+* Hyperbolic Tangent: Another mathematical function also shaped like an S curve, but bounded by [-1,1]
 
-How do LSTMs work?
+![Common Activation Functions](./images/CommonActivationFunctions_Cropped.jpg "Common Activation Functions")
+###### The sigmoid and tanh functions are used in the activation step during calculation to figure out which features are important
+
+### How do LSTMs work?
 
 Unlike standard RNNs that possess only one layer, LSTMs utilize multiple layers as a means to store long term dependencies. LSTMs feature what is called a cell state, or a collection of all information that has been stored throughout the chain. 
 
