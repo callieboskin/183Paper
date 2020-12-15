@@ -1,5 +1,5 @@
 # LSTM 
-LSTMs can be used to generate predictions in text. Below is a simple LSTM using PyTorch to predict sentence endings based off of training data from Dr. Suess' "The Cat in the Hat".
+LSTMs can be used to generate predictions in text. Below is a simple LSTM using Tensorflow (Keras) to predict sentence endings based off of training data from Dr. Suess' "The Cat in the Hat", from https://www.oatridge.co.uk/poems/d/dr-seuss-cat-in-the-hat.php.
 ```
 import numpy as np
 print("Hello World!")
