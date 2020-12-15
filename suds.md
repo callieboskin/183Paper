@@ -30,8 +30,9 @@ If you are interested in reading more, check out these two articles:
 This might seem scary at first, but do not feel intimidated by the complex math or the weird structures you might see. They are all simply a collection of inputs, outputs, and arrows that indicate the direction that information is flowing. With that in mind, let us look at a simple RNN set-up.
 
 ![A traditional RNN Architecture](./images/TraditionalRNNArchitecture.jpg "This is a traditional RNN Architecture")
+###### This is a traditional set up, where at each time step, there is exactly one input and one output. 
 
-This is a traditional set up, where at each time step, there is exactly one input and one output. There are other neural networks where there is only one input at all and the output of that step feeds into the input of the next step and yet others where there are many inputs and only one output at the last step. The structure and setup you choose will depend on what type of problem you are trying to solve. From the picture above, you can see that there is a basic input, an output, and some calculations that happen in between. 
+There are other neural networks where there is only one input at all and the output of that step feeds into the input of the next step and yet others where there are many inputs and only one output at the last step. The structure and setup you choose will depend on what type of problem you are trying to solve. From the picture above, you can see that there is a basic input, an output, and some calculations that happen in between. 
 
 The calculations are what makes this algorithm ultimately work, and we will be going into detail about what exactly those are later. The algorithm is simulated via nodes which contain the input (in green), output (in red), and calculation (in blue) steps inside. As seen in the picture above, the arrow that leads from one computational node into the next computational node is what allows this recurrent neural network to have persistent memory and maintain information about past events. 
 
@@ -48,7 +49,7 @@ Now that you have somewhat of an understanding of what Recurrent Neural Networks
 All RNNs have feedback loops where some information about the past inputs is retained, but over time, the amount of information retained decays exponentially. This is called the vanishing gradient problem. For some situations, this is desired, as only the most recent information is truly necessary to solve the problem, but not for all problems. Take music for example - if we were to generate music and only have the computer remember the past 5-10 notes, that might not work because a lot of the information regarding the tempo, the general theme of the song, and larger structural patterns are all lost. The same goes for words in a sentence and sentences in a paragraph. Though you might be able to figure out what words go together more often, it would be hard to understand the general theme or context of the paragraph without more than 5 words. For this reason, it can be difficult to train standard RNNs to solve problems that include long-term temporal dependencies. 
 
 ### LSTMs save the day!
-LSTM Networks are a special type of RNNs. They have a very similar layout, except LSTM computational units contain an additional cell called a "memory cell" that can maintain information over long periods of time. This memory cell includes additional gates which control when information enters its memory, when it should be forgotten, and how it should contribute to determining the output. These gates solve the problem of losing information over time, as it controls exactly what is important and what is not important by figuring this out during the training phase.
+LSTM Networks are a special type of RNNs. They have a very similar layout, except LSTM computational units contain an additional process called a "cell state" that can maintain information over long periods of time. This cell state includes additional gates which control when information enters its memory, when it should be forgotten, and how it should contribute to determining the output. These gates solve the problem of losing information over time, as it controls exactly what is important and what is not important.
 
 ### A Supervised Deep Learning Algorithm
 At the end of the day, Long short term memory neural networks are classified as a **Supervised Deep Learning** algorithm that can be used for classification or Regression. I know that was a lot of big words, but let's break it down.
@@ -83,7 +84,7 @@ Before jumping in, we have to define some common terms that are used when talkin
 * Hyperbolic Tangent: Another mathematical function also shaped like an S curve, but bounded by y=[-1,1]
 
 ![Common Activation Functions](./images/CommonActivationFunctions_Cropped.jpg "Common Activation Functions")
-###### The sigmoid and tanh functions are used in the activation step during calculation to figure out which features are important  
+###### The sigmoid and tanh functions are both used in the activation step during calculation.
 
 
 ### How do LSTMs work?
@@ -102,7 +103,7 @@ This cell state acts as a conveyor belt, traveling in a straight path across the
 ![Forget Gate](./images/ForgetGate.png "A focused picture of the forget gate within LSTMs")
 ###### Forget gates are the method by which LSTMs remove irrelevant information from their calculations.
 
-The first gate is called the “forget gate”. This gate will look through both the previous cell’s output (O<sub>t-1</sub>) and the next input (I<sub>t</sub>)and assign the information within the cell state values to determine which of the specific pieces of information will remain and which ones the state can “forget”. This gate is a sigmoid layer so it will output a value between 0 and 1 for the combined (O<sub>t-1</sub>,I<sub>t</sub>). If the information is assigned a 0, then the state will get rid of it and if the information is assigned a 1 then the information will stay. The forget gate output is multiplied by the cell state to remove all information with an assigned value of 0, or the information that the state no longer needs.  
+The first gate is called the “forget gate”. This gate will look through both the previous cell’s output (O<sub>t-1</sub>) and the next input (I<sub>t</sub>) and assign the information within the cell state values to determine which of the specific pieces of information will remain and which ones the state can “forget”. This gate is a sigmoid layer so it will output a value between 0 and 1 for the combined (O<sub>t-1</sub>,I<sub>t</sub>). If the information is assigned a 0, then the state will get rid of it and if the information is assigned a 1 then the information will stay. The forget gate output is multiplied by the cell state to remove all information with an assigned value of 0, or the information that the state no longer needs.  
 <br />
 
 ### The Input Gate
@@ -140,9 +141,6 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, LSTM
 from keras.utils import np_utils
 from keras.callbacks import ModelCheckpoint
-
-file = open("cat_in_hat.txt", "r")
-lines = file.readlines()
 ```
 
 Now, we want to load all the text input from the poem into Python.
@@ -192,7 +190,7 @@ X = X/float(vocab_len)
 y = np_utils.to_categorical(y)
 ```
 
-Create a 3-layer LSTM, the first two with 256 units of memory and will store sequences of input data, and the last with 128 units of memory, and will generate a prediction for the next character in the sequence. 
+Create a 3-layer LSTM, the first two will have 256 units of memory and will store sequences of input data. The last will have 128 units of memory, and will generate a prediction for the next character in the sequence. 
 
 ```
 model = Sequential()
@@ -276,7 +274,7 @@ LSTM-Alignment has many potential improvements over currently available alignmen
 
 ### Sequence Prediction: 
 
-Another example of LSTMs being able to identify long-range correlation between genomic sequences can be seen with identifying neanderthal introgression levels in modern human genes. To do this, the trained LSTM model has the ability to compare k-mers from modern human genes with neanderthal DNA to determine if the gene has ancestry within the neanderthal reference.
+Another example of LSTMs being able to identify long-range correlation between genomic sequences can be seen with identifying neanderthal introgression levels in modern human genes. To do this, the trained LSTM model has the ability to compare k-mers from modern human genes with neanderthal DNA to determine if the gene has ancestry within the Neanderthal reference.
 
 [Read the article here!](https://towardsdatascience.com/lstm-to-detect-neanderthal-dna-843df7e85743)
 
