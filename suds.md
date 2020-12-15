@@ -1,17 +1,72 @@
-# This is Suds' portion of the paper
+# Chapter 3: Long Short Term Memory
+#### A deep dive into something most people will not even remember long or short term besides for the exam...
+____
 
-# Intro to what RNN’s are
-## history
-## Applications
-## Brief intro of RNN Structure
+## Section 3.1: What are Recurrent Neural Networks?
 
-# What is a Long Short Term Memory
-## Supervised deep learning classification algo. (define each and every term. What is supervised?? What is deep? What is classification?)
+#### Introduction
+Now that we have covered some of the basic machine learning algorithms, lets dive into one of the more complex and widely used
+tools - a Long Short Term Memory Neural Network (LSTM). We will start with a brief overview of the super-category of Recurrent Neural
+Networks (RNN), then take a closer look at what makes a Long Short Term memory different from a typical RNN. Following that, you
+will have an opportunity to develop your own Long Short Term Memory Neural Network by following our code walkthrough. Finally, We'll
+wrap up our discussions with a comparison of this method vs. other machine learning methods you might have been exposed to as well
+as some potential applications of LSTM's in the real world. 
+
+### What are Recurrent Neural Networks?
+say a lil something here
+
+### History and Prior Applications
+random history and what it was used for
+
+### What is the structure of a Recurrent Neural Network
+this is where a picture or table might be handy.
+
+---
+
+## Section 3.2: What is a Long Short Term Memory Neural Network?
+
+### A supervised deep learning classification algorithm
+Supervised deep learning classification algo. (define each and every term. What is supervised?? What is deep? What is classification?)
+
+---
+## Section 3.3 How do Long Short Term Memory Neural Networks actually work?
+
+~Wes's section~
+
+---
+
+## Section 3.4 Code Walkthrough
+
+~Callie's section~
+
+---
+
+## Section 3.5  Compare and Contrast
+
+### What is difference between LSTM's and other RNN's?
+type something here
+
+### Comparison Chart
+
+|Type of Machine Learning Algorithm| IDK Some column Here | Efficiency                |
+|-----------|:----------------:|----:              |
+|Morning    | Oreos!           | Delicious         |
+|Afternoon  | Otter Pop        | It's hot out baby |
+|Night      | IPA              | I need it. |
+
+
+---
 
 # Compare and contrast LSTM vs other ML approaches
 ## What makes it different (gates, etc.)
 ## Good for language → intro to how language is like genome
 ## Good transition to next part
+
+
+
+
+
+
 
 ____
 
