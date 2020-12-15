@@ -1,5 +1,5 @@
 # LSTM 
-LSTMs can be used to generate predictions in text. Below is a simple LSTM using Tensorflow (Keras) to predict sentence endings based off of training data from Dr. Suess' "The Cat in the Hat", from https://www.oatridge.co.uk/poems/d/dr-seuss-cat-in-the-hat.php. 
+LSTMs can be used to generate predictions in text. Below is a simple LSTM using Tensorflow (Keras) to predict sentence endings based off of training data from Dr. Seuss' "The Cat in the Hat", from https://www.oatridge.co.uk/poems/d/dr-seuss-cat-in-the-hat.php. 
 
 Tutorial from Harsh Bansal at https://bansalh944.medium.com/text-generation-using-lstm-b6ced8629b03. 
 
@@ -74,7 +74,38 @@ model.add(Dense(y.shape[1], activation='softmax'))
 ```
 
 Compile the model using an optimizer.
+
 ```
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 ```
+
+Fit the model based on the generated input and output.
+
+```
+model.fit(X, y, epochs=4, batch_size=256, callbacks=desired_callbacks)
+```
+
+Change the output from binary to readable characters and use the model to generate a sequence of characters. 
+
+```
+num_to_char = dict((i, c) for i, c in enumerate(chars))
+tart = numpy.random.randint(0, len(x_data) - 1)
+pattern = x_data[start]
+```
+
+Predict the characters next in your pattern and print it to terminal.
+
+```
+for i in range(1000):
+    x = numpy.reshape(pattern, (1, len(pattern), 1))
+    x = x / float(vocab_len)
+    prediction = model.predict(x, verbose=0)
+    index = numpy.argmax(prediction)
+    result = num_to_char[index]
+    seq_in = [num_to_char[value] for value in pattern]
+    sys.stdout.write(result)
+    pattern.append(index)
+    pattern = pattern[1:len(pattern)]
+```
+
 The genome is the "text of life", and LSTMs lanauge modeling processing can be easily translated from words to the genome. Next we're going to talk about some examples of how LSTMs can be applied to genomic data. 
