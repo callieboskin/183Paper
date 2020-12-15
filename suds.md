@@ -59,7 +59,7 @@ At the end of the day, Long short term memory neural networks are classified as 
 
 Supervised simply means that in the training phase, we are feeding the neural network with data that has already been labeled with the correct answer. This allows for the neural network to correct itself and reconfigure its calculation nodes and memory gates in a way that is most optimized for the task it is trained for. To give an example, if we feed the neural network a bunch of text, letter after letter, it might be able to guess what the next letter is and then use the correct answer (the label) to judge whether it was right or wrong. If it is wrong, it will change its computational methods to be better next time, and if it is right, it will reinforce what it already has. This is opposed to unsupervised learning, where input just comes in without any labelling, allowing the neural net to discover for itself what the patterns are.
 
-Deep Learning corresponds to having multiple layers in between the input and the 
+Deep learning corresponds to having multiple layers in between the input and the output layers. This is a common tactic to allow for more computation that could find hidden patterns within the code. 
 
 ---
 ## Section 3.3 How do Long Short Term Memory Neural Networks actually work?
