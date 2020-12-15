@@ -73,7 +73,7 @@ model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 ```
 
-Compile the model using an optimizer ([a link[https://towardsdatascience.com/adam-latest-trends-in-deep-learning-optimization-6be9a291375c#:~:text=Adam%20%5B1%5D%20is%20an%20adaptive,for%20training%20deep%20neural%20networks.&text=The%20algorithms%20leverages%20the,learning%20rates%20for%20each%20parameter.] Adam was used). 
+Compile the model using an optimizer.
 ```
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 ```
