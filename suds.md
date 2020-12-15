@@ -124,19 +124,20 @@ The final gate is the output gate. While the prior two were manipulating the cel
 
 ## Section 3.5  Compare and Contrast
 
-### What is the difference between LSTM's and other RNN's?
-type something here
+### When do I use what algorithm?
+Now that you have seen how powerful LSTMs can be with specific data, you might be urging to get up out of your seat and start coding your own! We applaud your excitement, but before you start, you need to make sure you are using the right tool for the right job. LSTMs are one of many different machine learning algorithms out there, and each has its own pros and cons. How do you pick which to use? And after you pick which one to use, how do you choose the factors to customize that to your own data? Well.. there really isn't a clear answer. Many of these tools can be used for multiple different things, but some are definitely better at certain jobs. Often times, scientists will attempt the same problem using multiple different algorithms and pick the one that performs the best for their situation. This even includes stringing different types of ML algorithms together in a chain to find different complex relations in your data.
+
+Take a look at the following chart as a helpful guide to start your journey on the right track when picking which machine learning algorithm to use.
 
 ### Comparison Chart
 
-|Type of Machine Learning Algorithm| IDK Some column Here | Efficiency                |
-|-----------|:----------------:|----:              |
-|Morning    | Oreos!           | Delicious         |
-|Afternoon  | Otter Pop        | It's hot out baby |
-|Night      | IPA              | I need it. |
-
-### Uses in Language Processing
-It was used a lot in language processing. In the next section, we will show you other applications for it. :)
+|Machine Learning Algorithm|Description             |Type of Data  |When to use?  |
+|--------------------------|------------------------|--------------|--------------|
+|Multi-Layer Perceptrons   |A classical neural net  |Image, Text   |any input->output case|
+|Convolutional Neural Nets |A neural net designed for images  |Image   |Image identification, feature analysis|
+|Recurrent Neural Nets     |A neural net with memory|Speech, Text, Time-series data| Sequence prediction, classification |
+|Long Short Term Memory    |An RNN built to identify long-term interactions |Speech, Text, Music, Time-series data  |Sequence Prediction, classification|
+|Generative Adversarial Networks | An unsupervised ML tool to generate data|Image, Text  |When you want to generate new data|
 
 ---
 ## Section 3.6 Genomic Applications of Long Short Term Memory
